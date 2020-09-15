@@ -1,4 +1,4 @@
-// ⭐️ Example Challenge START ⭐️
+// ⭐️ Example ⭐️
 
 /**
  * ### Challenge `processFirstItem`
@@ -18,7 +18,7 @@ function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
 
-// ⭐️ Example Challenge END ⭐️
+// ⭐️ Example ⭐️
 
 
 ///// M V P ///////
@@ -27,10 +27,15 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * counter one and counter two provide the same result.  However in counter two let count is being define in the *global scope. 
+ *    
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ *Counter1 used global scope.  You can tell becaus the let count in enclosed within the function. 
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * counter1 once would be preferable in all cases I can think of.  Because counter2 count can be broken anywhere else in the code. 
  *
 */
 
@@ -38,7 +43,8 @@ function processFirstItem(stringList, callback) {
 function counterMaker() {
   let count = 0;
   return function counter() {
-    count++;
+    return count++;
+    
   }
 }
 
@@ -56,11 +62,13 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(team1, team2){
+ let team1score = Math.floor(Math.random()) * (Math.floor(3));
+ let team2score = Math.floor(Math.random()) * (Math.floor(3));
 
-    /*Code Here*/
-
-}
+  return `${team1}` + "'s score is " + team1score + "." || `${team2}` + "'s score is " + team2score + ".";
+} 
+console.log(inning(Braves, Yankees));
 
 /* Task 3: finalScore()
 
