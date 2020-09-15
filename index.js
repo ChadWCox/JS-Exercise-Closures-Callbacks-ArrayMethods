@@ -63,10 +63,13 @@ function counter2() {
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning() {
- return Math.floor(Math.random() * Math.floor(3));
+let home = Math.floor(Math.random() * Math.floor(3));
+    away = Math.floor(Math.random() * Math.floor(3));
+return {"Home":home,  "Away":away};
 }
-
 console.log(inning());
+inning();
+// console.log(inning()[0]);
 
 /* Task 3: finalScore()
 
@@ -81,12 +84,15 @@ finalScore(inning, 9) might return:
 }
 
 */ 
+console.log(inning().Home);
+console.log(inning().Away);
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
-}
+function finalScore(fun, num){
+  return {"Home": fun.Home * num,
+  "Away": fun.Away * num
+}}
+finalScore(inning(), 9);
+console.log(finalScore(inning(), 9));
 
 /* Task 4: 
 
@@ -110,8 +116,36 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function getInningScore(fun, num){
+  for (let i = 1; i < num; i++)
+
+return "Inning "+ i +" Home Team " + fun.Home + " - Away Team " + fun.Away;
 }
+console.log(getInningScore(inning(), 9));
+
+
+    
+//   }
+  
+//   for(let i = 0; i < num; i++){
+//     fun1(fun2, i){
+//       return {"Home Team": inning().Home * i,
+//               "Away Team": inning().Away * i
+//   }
+// }
+
+
+
+
+// function scoreboard(fun1, fun2, num) {
+  
+  
+  
+//   }
+// }
+
+
+
+// }
 
 
